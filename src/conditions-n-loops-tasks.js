@@ -133,8 +133,73 @@ function convertToRomanNumerals(num) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+// const digit = [
+//   'zero',
+//   'one',
+//   'two',
+//   'three',
+//   'four',
+//   'five',
+//   'six',
+//   'seven',
+//   'eight',
+//   'nine',
+// ];
+// function convertNumberToString(numberStr) {
+//   let res = '';
+//   for (let i = 0; i < numberStr.length; i += 1) {
+//     if (numberStr[i] === ',' || numberStr[i] === '.') res += 'point';
+//     else if (numberStr[i] === '-') res += 'minus';
+//     else res += digit[+numberStr[i]];
+//     if (i !== numberStr.length - 1) res += ' ';
+//   }
+//   return res;
+// }
+function convertNumberToString(numberStr) {
+  let res = '';
+  for (let i = 0; i < numberStr.length; i += 1) {
+    switch (numberStr[i]) {
+      case '0':
+        res += 'zero';
+        break;
+      case '1':
+        res += 'one';
+        break;
+      case '2':
+        res += 'two';
+        break;
+      case '3':
+        res += 'three';
+        break;
+      case '4':
+        res += 'four';
+        break;
+      case '5':
+        res += 'five';
+        break;
+      case '6':
+        res += 'six';
+        break;
+      case '7':
+        res += 'seven';
+        break;
+      case '8':
+        res += 'eight';
+        break;
+      case '9':
+        res += 'nine';
+        break;
+      case '-':
+        res += 'minus';
+        break;
+
+      default:
+        res += 'point';
+        break;
+    }
+    if (i !== numberStr.length - 1) res += ' ';
+  }
+  return res;
 }
 
 /**
